@@ -1,39 +1,7 @@
 <div>
+	<search></search>
 
-
-	<div class="container container-custom">
-		<div class="row">
-			<div class="col-sm-12 col-sm-12-custom ">
-				<form class="form-inline form-group-custom">
-					<div class="form-group">
-						<input type="text" class="form-control" id="from" placeholder="From">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" id="to" placeholder="To">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" id="startDate" placeholder="Start Date">
-					</div>
-					<div class="form-group">
-						<input type="text" class="form-control" id="endDate" placeholder="End Date">
-					</div>
-					<div>
-						<button type="submit" class="btn btn-default">Submit</button>
-					</div>
-					<div class="form-group">
-						<div class="radio" *ngFor="let t of trip">
-							<label>
-								<input type="radio" name="trip" [(ngModel)]="user.trip" [value]="t.value">
-								{{t.display}}
-							</label>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-
+	<div id="sticky"></div>
 
 	<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators -->
@@ -74,15 +42,250 @@
 		</a>
 	</div>
 
+	<hr class="dottedLine" />
 
-	<!--<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-4" style="background-color:gray;">.col-sm-4</div>
-			<div class="col-sm-4" style="background-color:light-blue;">.col-sm-4</div>
-			<div class="col-sm-4" style="background-color:light-blue;">.col-sm-4</div>
+	<div class="col-md-12">
+		<table border="1" bordercolor="green" class="col-md-12">
+			<tr>
+				<div class="col-md-6">
+					<td>
+						<h3>Flight Offers</h3>
+						<div id="flightOffers" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#flightOffers" data-slide-to="0" class="active"></li>
+								<li data-target="#flightOffers" data-slide-to="1"></li>
+								<li data-target="#flightOffers" data-slide-to="2"></li>
+								<li data-target="#flightOffers" data-slide-to="3"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner carousel-inner-offers" role="listbox">
+								<div class="item active">
+									<img src="../assets/images/14/142084/raw_1477034816.jpeg" alt="Chania">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142157/raw_1477039484.jpeg" alt="Chania">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142158/raw_1477039487.jpeg" alt="Flower">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142168/raw_1477039801.jpeg" alt="Flower">
+								</div>
+							</div>
+
+							<!-- Left and right controls -->
+							<a class="left carousel-control" href="#flightOffers" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#flightOffers" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</td>
+				</div>
+				<div class="col-md-6">
+					<td>
+						<h3>Packages</h3>
+						<div id="packages" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#packages" data-slide-to="0" class="active"></li>
+								<li data-target="#packages" data-slide-to="1"></li>
+								<li data-target="#packages" data-slide-to="2"></li>
+								<li data-target="#packages" data-slide-to="3"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner " role="listbox">
+								<div class="item active">
+									<img src="../assets/images/14/142254/raw_1477043037.jpeg" alt="Chania">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142255/raw_1477043060.jpeg" alt="Chania">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142256/raw_1477043080.jpeg" alt="Flower">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142258/raw_1477043175.jpeg" alt="Flower">
+								</div>
+							</div>
+
+							<!-- Left and right controls -->
+							<a class="left carousel-control" href="#packages" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#packages" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</td>
+				</div>
+				<td rowspan="2">
+					<div id="add" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#add" data-slide-to="0" class="active"></li>
+							<li data-target="#add" data-slide-to="1"></li>
+							<li data-target="#add" data-slide-to="2"></li>
+							<li data-target="#add" data-slide-to="3"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<img src="../assets/images/14/142336/raw_1477055139.jpeg" alt="Chania">
+							</div>
+
+							<div class="item">
+								<img src="../assets/images/14/142334/raw_1477054893.jpeg" alt="Chania">
+							</div>
+
+							<div class="item">
+								<img src="../assets/images/14/142323/raw_1477054391.jpeg" alt="Flower">
+							</div>
+
+							<div class="item">
+								<img src="../assets/images/14/142320/raw_1477053779.jpeg" alt="Flower">
+							</div>
+						</div>
+
+						<!-- Left and right controls -->
+						<a class="left carousel-control" href="#add" role="button" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="#add" role="button" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<div class="col-md-6">
+					<td>
+						<h3>Seasnol Offers</h3>
+						<div id="seasnolOffers" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#seasnolOffers" data-slide-to="0" class="active"></li>
+								<li data-target="#seasnolOffers" data-slide-to="1"></li>
+								<li data-target="#seasnolOffers" data-slide-to="2"></li>
+								<li data-target="#seasnolOffers" data-slide-to="3"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img src="../assets/images/14/142288/raw_1477046902.jpeg" alt="Chania">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142289/raw_1477048262.jpeg" alt="Chania">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142291/raw_1477047581.jpeg" alt="Flower">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142312/raw_1477051567.jpeg" alt="Flower">
+								</div>
+							</div>
+
+							<!-- Left and right controls -->
+							<a class="left carousel-control" href="#seasnolOffers" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#seasnolOffers" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</td>
+				</div>
+				<div class="col-md-6">
+					<td>
+						<h3>Flight + Hotel Offers</h3>
+						<div id="flightHotelOffers" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+								<li data-target="#flightHotelOffers" data-slide-to="0" class="active"></li>
+								<li data-target="#flightHotelOffers" data-slide-to="1"></li>
+								<li data-target="#flightHotelOffers" data-slide-to="2"></li>
+								<li data-target="#flightHotelOffers" data-slide-to="3"></li>
+							</ol>
+
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner" role="listbox">
+								<div class="item active">
+									<img src="../assets/images/14/142313/raw_1477051584.jpeg" alt="Chania">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142289/raw_1477048262.jpeg" alt="Chania">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142291/raw_1477047581.jpeg" alt="Flower">
+								</div>
+
+								<div class="item">
+									<img src="../assets/images/14/142312/raw_1477051567.jpeg" alt="Flower">
+								</div>
+							</div>
+
+							<!-- Left and right controls -->
+							<a class="left carousel-control" href="#flightHotelOffers" role="button" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="right carousel-control" href="#flightHotelOffers" role="button" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</td>
+				</div>
+			</tr>
+		</table>
+	</div>
+
+	<div class="col-md-8">
+		<!--<div class="col-md-8">-->
+		<div class="col-md-6">
+
 		</div>
-	</div>-->
+		<div class="col-md-6">
 
+		</div>
+		<!--</div>-->
 
+		<!--<div class="col-md-8">-->
+		<div class="col-md-6">
 
+		</div>
+		<div class="col-md-6">
+
+		</div>
+		<!--</div>-->
+		<div class="col-md-4">
+			<!--<h3></h3>-->
+
+		</div>
+	</div>
 </div>
