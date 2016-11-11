@@ -19,12 +19,12 @@
 }
 
 .search-button{
-    margin-left: 85%;
+    margin-left: 87%;
 }
 
 .container-custom {
     width: 100%;
-    background-color: #878787;
+    background-color: #B3C89A;
     padding: 25px;
 }
 
@@ -156,6 +156,14 @@ button{
     border-top: dotted 2px;
 }
 
+.nav > li > a:focus, .nav > li > a:hover {
+    text-decoration: none;
+    background-color: #158f93;
+}
+
+.search-button-row {
+    padding-left: 16%;
+}
 .footer {
     position: fixed;
     width: 100%;

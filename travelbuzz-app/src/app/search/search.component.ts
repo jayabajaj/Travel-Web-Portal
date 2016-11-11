@@ -55,7 +55,7 @@ export class SearchComponent {
         firstDayOfWeek: 'mo',
         sunHighlight: true,
         height: '33px',
-        width: 'auto',
+        width: '220px',
         inline: false,
         disableUntil: { year: 2016, month: 8, day: 10 },
         selectionTxtFontSize: '16px'
