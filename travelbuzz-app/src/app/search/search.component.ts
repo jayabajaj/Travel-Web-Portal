@@ -50,22 +50,26 @@ export class SearchComponent {
     ];
 
     myDatePickerOptions = {
-        todayBtnTxt: 'Today',
+      //  todayBtnTxt: 'Today',
         dateFormat: 'yyyy-mm-dd',
         firstDayOfWeek: 'mo',
         sunHighlight: true,
         height: '33px',
-        width: '220px',
+        width: '200px',
         inline: false,
         disableUntil: { year: 2016, month: 8, day: 10 },
-        selectionTxtFontSize: '16px'
+        selectionTxtFontSize: '16px',
+        showDateFormatPlaceholder: false,
+        indicateInvalidDate: true
     };
 
     ngOnInit() {
         this.user = {
             trip: this.trip[0].value,
             adult: this.adults[0].value,
-            children: null
+            children: null,
+            // startDate: new Date(),
+            // endDate: null
         }
     }
 
