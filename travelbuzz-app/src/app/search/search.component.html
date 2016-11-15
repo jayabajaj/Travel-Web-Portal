@@ -1,0 +1,40 @@
+<div id="stickytypeheader" data-spy="affix" data-offset-top="197">
+	<div class="container container-custom">
+		<form class="form-inline form-group-custom">
+			<div class="row">
+				<div class="form-group">
+					<input type="text" class="form-control" id="from" placeholder="From">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" id="to" placeholder="To">
+				</div>
+				<div class="form-group">
+					<my-date-picker 
+					[options]="myDatePickerOptions"  (dateChanged)="onDateChanged($event)" placeholder="Please specify a date"></my-date-picker>
+				</div>
+				<div class="form-group">
+					<my-date-picker [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)"></my-date-picker>
+				</div>
+			</div>
+			<div class="row search-button-row">
+				<button type="submit" class="button search-button pull-right">Submit</button>
+			</div>
+			<div class="row">
+				<div class="radio search-bar-label" *ngFor="let t of trip">
+					<input id="trip" type="radio" class="with-font" name="trip" [(ngModel)]="user.trip" [value]="t.value"> 
+					<label for="trip">{{t.display}}</label>
+					<!--<input id="question1" class="with-font" name="question" type="radio" value="sel" />
+				    <label for="question1">{{t.display}}</label>-->
+				</div>
+				<label class="search-bar-label">Adults</label>
+				<select name="adult" class="form-control select" [(ngModel)]="user.adult">
+						<option *ngFor="let a of adults" [value]="a.value">{{a.display}}</option>
+      				</select>
+				<label class="search-bar-label">Children</label>
+				<select name="children" class="form-control select" [(ngModel)]="user.children">
+						<option *ngFor="let c of children" [value]="c.value">{{c.display}}</option>
+      				</select>
+			</div>
+		</form>
+	</div>
+</div>

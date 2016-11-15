@@ -19,12 +19,12 @@
 }
 
 .search-button{
-    margin-left: 85%;
+    margin-left: 87%;
 }
 
 .container-custom {
     width: 100%;
-    background-color: #878787;
+    background-color: #B3C89A;
     padding: 25px;
 }
 
@@ -132,6 +132,11 @@ button{
       display: inline-block;
 }
 
+.search-bar-label {
+    font-family: "Times New Roman", Times, serif;
+    font-size: medium;
+}
+
 /*.carousel-inner-offers {*/
     /*position: relative;*/
     /*width: 100% !important;*/
@@ -152,10 +157,53 @@ button{
     font-size: larger;
 }
 
+input[type=radio].with-font,
+input[type=checkbox].with-font {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+    
+input[type=radio].with-font ~ label:before{
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f1db";
+    letter-spacing: 10px;
+    font-size: 1.2em;
+    color: #535353;
+    width: 1.4em;
+}
+
+input[type=radio].with-font:checked ~ label:before  {
+    content: "\f00c";
+    font-size: 1.2em;
+    color: darkgreen;
+    letter-spacing: 5px;
+}
+
+input[type=radio].with-font:focus ~ label:before,
+input[type=radio].with-font:focus ~ label,
+{                
+    color: green;
+}
+label { font-size: 20px; }
 .dottedLine {
     border-top: dotted 2px;
 }
 
+.nav > li > a:focus, .nav > li > a:hover {
+    text-decoration: none;
+    background-color: #158f93;
+}
+
+.search-button-row {
+    padding-left: 16%;
+}
 .footer {
     position: fixed;
     width: 100%;
@@ -164,4 +212,18 @@ button{
     width: 100%;
     height: 60px;
     background-color: #00bcd4;
+}
+.dateclass{
+    width:100%;
+}
+
+.dateclass.placeholderclass::before{
+    width:100%;
+    content:attr(placeholder);
+    background-color:#FFFFFF;
+}
+
+.dateclass.placeholderclass:hover::before{
+    width:0%;
+    content:"";
 }
