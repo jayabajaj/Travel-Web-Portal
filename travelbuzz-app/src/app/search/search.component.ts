@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { User } from './user.interface';
+import { Trip } from './trip.interface';
+import { Adults } from './adults.interface';
+import { Children } from './children.interface';
 declare var $: any;
 
 @Component({
@@ -11,6 +14,7 @@ export class SearchComponent {
     public user: User;
 
     constructor() {
+        
         $(function () {
             var stickyHeaderTop = $('#stickytypeheader').offset().top;
 
@@ -24,29 +28,33 @@ export class SearchComponent {
                 }
             });
         });
-    }
 
-    public trip = [
+        $("#calender").attr("placeholder", "Start Date").val("").focus().blur();
+}
+
+    public trip: Trip[] = [
         { value: 'single-trip', display: 'Single Trip' },
         { value: 'round-trip', display: 'Round Trip' }
     ];
 
-    public adults = [
-        { value: 1, display: 1 },
-        { value: 2, display: 2 },
-        { value: 3, display: 3 },
-        { value: 4, display: 4 },
-        { value: 5, display: 5 },
-        { value: 6, display: 6 }
+    public adults: Adults[] = [
+        { value: 1, display: 'Adults' },
+        { value: 1, display: '1' },
+        { value: 2, display: '2' },
+        { value: 3, display: '3' },
+        { value: 4, display: '4' },
+        { value: 5, display: '5' },
+        { value: 6, display: '6' }
     ];
 
-    public children = [
-        { value: 1, display: 1 },
-        { value: 2, display: 2 },
-        { value: 3, display: 3 },
-        { value: 4, display: 4 },
-        { value: 5, display: 5 },
-        { value: 6, display: 6 }
+    public children: Children[] = [
+        { value: 0, display: 'Children' },
+       { value: 1, display: '1' },
+        { value: 2, display: '2' },
+        { value: 3, display: '3' },
+        { value: 4, display: '4' },
+        { value: 5, display: '5' },
+        { value: 6, display: '6' }
     ];
 
     myDatePickerOptions = {

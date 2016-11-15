@@ -135,15 +135,13 @@ button{
 .search-bar-label {
     font-family: "Times New Roman", Times, serif;
     font-size: medium;
+    /*padding-right: 5%;*/
+    color: white;
 }
 
-/*.carousel-inner-offers {*/
-    /*position: relative;*/
-    /*width: 100% !important;*/
-    /*height: 50% !important;*/
-    /*max-height: 400px !important;*/
-    /*margin: auto;*/
-/*}*/
+.dropBoxLabels {
+    width: 25% !important;
+}
 
 .form-group-custom {
     display: inline-block;
