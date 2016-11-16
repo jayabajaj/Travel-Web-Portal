@@ -28,8 +28,6 @@ export class SearchComponent {
                 }
             });
         });
-
-        $("#calender").attr("placeholder", "Start Date").val("").focus().blur();
 }
 
     public trip: Trip[] = [
