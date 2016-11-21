@@ -9,16 +9,18 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchComponent } from './search/search.component';
+import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, HeaderComponent, FooterComponent, SearchComponent 
+    AppComponent, HomeComponent, HeaderComponent, FooterComponent, SearchComponent  
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MyDatePickerModule
+    MyDatePickerModule,
+    Ng2AutoCompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
