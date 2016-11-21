@@ -3,38 +3,59 @@
 		<form class="form-inline form-group-custom">
 			<div class="row">
 				<div class="form-group">
-					<input type="text" class="form-control" id="from" placeholder="From">
+					<input ng2-auto-complete name="from" class="form-control" [(ngModel)]="model1" placeholder="From Address(min. 2 chars)" [source]="googleGeoCode1"
+						display-property-name="formatted_address" path-to-data="results" min-chars="2" />
+					<!--<input type="text" class="form-control" id="from" placeholder="From">-->
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" id="to" placeholder="To">
+					<input ng2-auto-complete name="To" class="form-control" [(ngModel)]="model2" placeholder="To Address(min. 2 chars)" [source]="googleGeoCode2"
+						display-property-name="formatted_address" path-to-data="results" min-chars="2" />
+					<!--<input type="text" class="form-control" id="to" placeholder="To">-->
 				</div>
 				<div class="form-group">
-					<my-date-picker id="calender" 
-					[options]="myDatePickerOptions"  (dateChanged)="onDateChanged($event)" placeholder="Please specify a date"></my-date-picker>
+					<my-date-picker [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)" placeholder="Please specify a date"></my-date-picker>
 				</div>
 				<div class="form-group">
 					<my-date-picker [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)"></my-date-picker>
 				</div>
 			</div>
-			<div class="row search-button-row">
-				<button type="submit" class="button search-button pull-right">Submit</button>
-			</div>
+
 			<div class="row">
-				<div class="col-sm-4">
-				<div class="radio search-bar-label" *ngFor="let t of trip">
-					<input id="trip" type="radio" class="with-font" name="trip" [(ngModel)]="user.trip" [value]="t.value"> 
-					<label for="trip" style="font-weight: bold;">{{t.display}}</label>
+				<div class="col-md-3">
+					<div class="radio search-bar-label" *ngFor="let t of trip">
+						<input id="trip" type="radio" class="with-font" name="trip" [(ngModel)]="user.trip" [value]="t.value">
+						<label for="trip">{{t.display}}</label>
+					</div>
 				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<!--<label class="search-bar-label">Adults</label>-->
+						<select name="adult" class="form-control" [(ngModel)]="user.adult">
+								<option value="" disabled>Adult</option>
+								<option *ngFor="let a of adults" [value]="a.value">{{a.display}}</option>
+						</select>
+						
+						<span></span>
+					</div>
 				</div>
-				<div class="col-sm-8">
-				<select name="adult" class="form-control dropBoxLabels" [(ngModel)]="user.adult">
-					<option *ngFor="let a of adults" [ngValue]="Adult" >{{a.display}}</option>
-				</select>
-				<select name="children" class="form-control dropBoxLabels" [(ngModel)]="user.children">
-        				<option *ngFor="let c of children" [ngValue]="children">{{c.display}}</option>
-				</select>
+				<div class="col-md-4">
+					<div class="form-group">
+					<!--<label class="search-bar-label">Children</label>-->
+					<select name="children" class="form-control" [(ngModel)]="user.children">
+						<option value="" disabled>Children</option>
+						<option *ngFor="let c of children" [value]="c.value">{{c.display}}</option>
+      				</select>
+					</div>
 				</div>
+
+				<div class="col-md-1">
+					
+						<button type="submit" class="button search-button">Submit</button>
+					
+				</div>
+				
 			</div>
+
 		</form>
 	</div>
 </div>

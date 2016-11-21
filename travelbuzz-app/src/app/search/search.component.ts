@@ -1,20 +1,25 @@
 import { Component } from '@angular/core';
 import { User } from './user.interface';
-import { Trip } from './trip.interface';
-import { Adults } from './adults.interface';
-import { Children } from './children.interface';
+import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 declare var $: any;
 
 @Component({
     selector: 'search',
     templateUrl: './search.component.html',
+    styles: [`
+    ng2-auto-complete, input {
+      display: block; border: 1px solid #ccc; width: 300px;
+    }
+  `]
     //   styleUrls: ['./app.component.css']
 })
 export class SearchComponent {
     public user: User;
-
+ 
+    googleGeoCode1: string = "https://maps.googleapis.com/maps/api/geocode/json?address=:keyword";
+    googleGeoCode2: string = "https://maps.googleapis.com/maps/api/geocode/json?address=:keyword";    
+   
     constructor() {
-        
         $(function () {
             var stickyHeaderTop = $('#stickytypeheader').offset().top;
 
@@ -28,31 +33,31 @@ export class SearchComponent {
                 }
             });
         });
-}
-
-    public trip: Trip[] = [
+    }
+   
+    public trip = [
         { value: 'single-trip', display: 'Single Trip' },
         { value: 'round-trip', display: 'Round Trip' }
     ];
+    
+    model3 = {key: 3, name: "Key Three"};
 
-    public adults: Adults[] = [
-        { value: 1, display: 'Adults' },
-        { value: 1, display: '1' },
-        { value: 2, display: '2' },
-        { value: 3, display: '3' },
-        { value: 4, display: '4' },
-        { value: 5, display: '5' },
-        { value: 6, display: '6' }
+    public adults = [
+        { value: 1, display: 1 },
+        { value: 2, display: 2 },
+        { value: 3, display: 3 },
+        { value: 4, display: 4 },
+        { value: 5, display: 5 },
+        { value: 6, display: 6 }
     ];
 
-    public children: Children[] = [
-        { value: 0, display: 'Children' },
-       { value: 1, display: '1' },
-        { value: 2, display: '2' },
-        { value: 3, display: '3' },
-        { value: 4, display: '4' },
-        { value: 5, display: '5' },
-        { value: 6, display: '6' }
+    public children = [
+        { value: 1, display: 1 },
+        { value: 2, display: 2 },
+        { value: 3, display: 3 },
+        { value: 4, display: 4 },
+        { value: 5, display: 5 },
+        { value: 6, display: 6 }
     ];
 
     myDatePickerOptions = {
@@ -72,7 +77,7 @@ export class SearchComponent {
     ngOnInit() {
         this.user = {
             trip: this.trip[0].value,
-            adult: this.adults[0].value,
+            adult: null,
             children: null,
             // startDate: new Date(),
             // endDate: null
