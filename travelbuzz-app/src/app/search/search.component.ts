@@ -25,7 +25,7 @@ export class SearchComponent {
 
             $(window).scroll(function () {
                 if ($(window).scrollTop() > stickyHeaderTop) {
-                    $('#stickytypeheader').css({ position: 'fixed', top: '50px', "z-index": '16', opacity: 0.7 });
+                    $('#stickytypeheader').css({ position: 'fixed', top: '25px', "z-index": '16', opacity: 0.7 });
                     $('#sticky').css('display', 'block');
                 } else {
                     $('#stickytypeheader').css({ position: 'static', top: '0px', opacity: 1 });
