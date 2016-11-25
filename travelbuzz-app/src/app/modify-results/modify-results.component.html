@@ -1,0 +1,60 @@
+<div id="stickytypeheader" class="container container-custom">
+	<div class="formcontainer container" id="formcontainers" data-spy="affix" data-offset-top="100">		
+			<form class="form-inline form-group-custom">
+				<div class="blue" id="formBlue">
+					<!--height:80px;  style="border:1px solid blue;"-->
+
+					<div class="forminputContainer">
+						<!--width:84%;height:78px;-->
+						<div>
+							<div class="form-group" style="vertical-align:top;">
+								<input ng2-auto-complete name="from" class="form-control dropBoxLabels" [(ngModel)]="model1" placeholder="From Address(min. 2 chars)" [source]="googleGeoCode1"
+									display-property-name="formatted_address" path-to-data="results" min-chars="2" />
+
+							</div>
+
+							<div class="form-group" style="vertical-align:top;">
+								<input ng2-auto-complete name="To" class="form-control dropBoxLabels" [(ngModel)]="model2" placeholder="To Address(min. 2 chars)" [source]="googleGeoCode2"
+									display-property-name="formatted_address" path-to-data="results" min-chars="2" />
+							</div>
+
+							<div class="form-group">
+								<my-date-picker [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)" placeholder="Please specify a date"></my-date-picker>
+							</div>
+
+							<div class="form-group">
+								<my-date-picker [options]="myDatePickerOptions" (dateChanged)="onDateChanged($event)"></my-date-picker>
+							</div>
+						</div>
+
+
+						<div>
+							<div class="form-group">
+								<select name="adult" class="form-control dropBoxLabels" [(ngModel)]="user.adult">
+						<option *ngFor="let a of adults" [ngValue]="Adult" >{{a.display}}</option>
+					</select>
+
+							</div>
+
+							<div class="form-group">
+								<select name="children" class="form-control dropBoxLabels" [(ngModel)]="user.children">
+        				<option *ngFor="let c of children" [ngValue]="children">{{c.display}}</option>
+					</select>
+							</div>
+
+							<div class="radio radioclass" *ngFor="let t of trip">
+								<input id="trip" type="radio" name="trip" [(ngModel)]="user.trip" [value]="t.value">
+								<label class="search-bar-label" for="trip" style="font-weight: bold;">{{t.display}}</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="search-button-row">
+						<button type="submit" (click)="onsubmit()" class="button search-button">Search</button>
+					</div>
+
+				</div>
+
+			</form>		
+	</div>
+</div>
