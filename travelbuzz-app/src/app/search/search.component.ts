@@ -8,13 +8,8 @@ declare var $: any;
 @Component({
     selector: 'search',
     templateUrl: './search.component.html',
-//     styles: [`
-//     ng2-auto-complete, input {
-//       display: block; border: 1px solid #ccc; width: 300px;
-//     }
-//   `]
-    //   styleUrls: ['./app.component.css']
 })
+
 export class SearchComponent {
     public user: User;
     width :Number;
@@ -96,13 +91,16 @@ export class SearchComponent {
             trip: this.trip[0].value,
             adult: null,
             children: null,
-            // startDate: new Date(),
-            // endDate: null
         }
     }
 
     onDateChanged(event: any) {
         console.log('onDateChanged(): ', event.date, ' - formatted: ', event.formatted, ' - epoc timestamp: ', event.epoc);
+    }
+
+    onsubmit() {
+        console.log('submit clicked!!');
+        this.router.navigate(['result']);
     }
 }
 
